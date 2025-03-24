@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Especifica que el documento es HTML5 -->
+    <meta charset="UTF-8">
+    <!-- Configura la vista para que sea adaptable a dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página en la pestaña del navegador -->
+    <title>Buscador de Ciudades</title>
+    
+    <!-- Enlace a la hoja de estilos de Leaflet (librería de mapas) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Enlace a la hoja de estilos personalizada -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <!-- Barra lateral donde estarán los elementos de búsqueda e información -->
+    <div class="sidebar">
+        <!-- Caja de búsqueda con un botón y un campo de entrada de texto -->
+        <div class="search-box">
+            <button id="search-button">🔍</button>
+            <input type="text" id="search-input" placeholder="Buscar ciudad...">
+        </div>
+        
+        <!-- Mensaje de carga, oculto por defecto -->
+        <div id="loading" class="hidden">Cargando...</div>
+        
+        <!-- Lista donde se mostrarán las ciudades encontradas -->
+        <div class="locations" id="locations-list"></div>
+        
+        <!-- Mensaje de error si no se encuentran resultados, oculto por defecto -->
+        <div id="error-message" class="hidden">No se encontraron resultados.</div>
+        
+        <!-- Tarjeta con información de la ciudad seleccionada, oculta por defecto -->
+        <div id="info-card" class="hidden">
+            <h3 id="city-name"></h3>
+            <p><strong>Latitud:</strong> <span id="latitude"></span></p>
+            <p><strong>Longitud:</strong> <span id="longitude"></span></p>
+        </div>
+    </div>
+    
+    <!-- Contenedor donde se mostrará el mapa interactivo -->
+    <div id="map"></div>
+
+    <!-- Importa la librería Leaflet para el manejo de mapas -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Importa el archivo JavaScript donde se implementará la funcionalidad -->
+    <script src="JS/app.js"></script>
+</body>
+</html>
